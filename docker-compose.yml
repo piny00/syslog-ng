@@ -1,0 +1,13 @@
+version: '2'
+services:
+  syslog-server:
+    image: pinyo/syslog-ng:v0.4
+    container_name: syslog-ng_server
+    restart: always
+    ports:
+      - "514:514/tcp"
+      - "514:514/udp"
+    volumes:
+      - /srv/vpn-log-processor/log:/var/log
+
+
